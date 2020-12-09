@@ -9,11 +9,10 @@
 #define error -1
 
 typedef struct binary{
-    //int b;
     int occurrence;
     struct binary *left;
     struct binary *right;
-    char word[];
+    char word[15];
 } bTree; //binary Tree;
 
 typedef struct avl{
@@ -21,15 +20,33 @@ typedef struct avl{
     int occurrence;
     struct avl *left;
     struct avl *right;
-    char *word;
+    char word[15];
 } aTree; //AVL Tree
 
-void readFile(bTree **tree);
+void readFile(bTree **tree, aTree **avl);
 
 int insertIntoBinaryTree(bTree **tree, char *w);
 
-int printTree(bTree *tree);
+int insertIntoAvlTree(aTree **tree, char *w);
+
+void rotateRight (aTree **tree);
+
+void rotateLeft (aTree **tree);
+
+void rotateRightLeft (aTree **tree);
+
+void rotateLeftRight (aTree **tree);
+
+int printTree(aTree *avl);
 
 int compareStrings(char w1[], char w2[]);
+
+int walkThroughBinaryCost(bTree *tree);
+
+int walkThroughAvlCost(aTree *tree);
+
+int searchOnAvlTree(aTree **tree, char *w);
+
+int searchOnBinaryTree(bTree **tree, char *w);
 
 #endif //TREE_H
