@@ -8,7 +8,7 @@
 #include <string.h>
 #include <time.h>
 
-void readFile(bTree **tree, aTree **avl) {
+void readFile(bTree **tree, aTree **avl, char *fn) {
     FILE *fp;
     char c, word[15];
     int i = 0;
@@ -17,7 +17,7 @@ void readFile(bTree **tree, aTree **avl) {
     memset(word, 0, 15);
 
     //abre o arquivo do jogo
-    fp = fopen("archive.txt", "r");
+    fp = fopen(fn, "r");
 
     //se o arquivo nao existir, ou tiver um erro, sai do programa
     if (fp == NULL) {

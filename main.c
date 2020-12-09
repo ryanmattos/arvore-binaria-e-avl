@@ -7,7 +7,7 @@
 int main(){
     clock_t start_t, end_t, total_t;
     int option, response;
-    char search[15];
+    char search[15], filename[20];
     bTree *tree = NULL;
     aTree *avl = NULL;
 
@@ -25,8 +25,10 @@ int main(){
 
         switch (option) {
             case 1:
+                printf("Insira o nome do arquivo (escreva a extensao .txt): ");
+                scanf("%s", filename);
                 printf("\nLendo o arquivo...\n");
-                readFile(&tree, &avl);
+                readFile(&tree, &avl, filename);
                 break;
             case 2:
                 printf("\nListando as palavras em ordem alfabetica...\n");

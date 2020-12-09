@@ -23,7 +23,7 @@ typedef struct avl{
     char word[15];
 } aTree; //AVL Tree
 
-void readFile(bTree **tree, aTree **avl);
+void readFile(bTree **tree, aTree **avl, char *fn);
 
 int insertIntoBinaryTree(bTree **tree, char *w);
 
